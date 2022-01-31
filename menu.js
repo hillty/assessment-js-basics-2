@@ -64,7 +64,7 @@ const pizza = {
 //CODE HERE // 
 
 
-// console.log(pizza.tags[i = 1])
+// console.log(pizza.tags[1])
 
 
 /*
@@ -111,7 +111,48 @@ const pizza = {
 
 //CODE HERE // 
 
-let foodArr = [{"price": "10"},{"popularity": "8"},{"rating": "6"},{"tags": ["gluten-free", "kids"]}]
+let foodArr = [
+    {
+        name: 'pepperoni',
+        price: 5,
+        category: 'entree',
+        popularity: 10,
+        rating: 10,
+        tags: ['yummy', 'meat', 'value', 'family favorite']
+    },
+    {
+        name: 'cheese',
+        price: 5,
+        category: 'entree',
+        popularity: 8,
+        rating: 6,
+        tags: ['cheesy', 'meat', 'value', 'family favorite']
+    },
+    {
+        name: 'hawaiian',
+        price: 8,
+        category: 'entree',
+        popularity: 8,
+        rating: 6,
+        tags: ['yummy', 'pineapple', 'value', 'family favorite']
+    },
+    {
+        name: 'chicken barbaque',
+        price: 7,
+        category: 'entree',
+        popularity: 10,
+        rating: 9,
+        tags: ['bbq', 'meat', 'value', 'family favorite']
+    },
+    {
+        name: 'meat lovers',
+        price: 8,
+        category: 'entree',
+        popularity: 7,
+        rating: 6,
+        tags: ['extra meat', 'meat', 'value', 'family favorite']
+    }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -127,6 +168,9 @@ let foodArr = [{"price": "10"},{"popularity": "8"},{"rating": "6"},{"tags": ["gl
 
 //CODE HERE // 
 
+const filteredFood = foodArr.filter(ele => ele.tags.includes('bbq'))
+
+// console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -168,14 +212,26 @@ let foodArr = [{"price": "10"},{"popularity": "8"},{"rating": "6"},{"tags": ["gl
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+//CODE HERE // 
+
+const filterByProperty = (property, num, type) => {
+    const filteredArray = foodArr.filter(meal => {
+        if(type === 'above'){
+            return meal[property] > num
+        }else if(type === 'below'){
+            return meal[property] < number
+        }
+    })
+    return filteredArray
+}
 
 
 /*
-    Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+Invoke the `filterByProperty` function passing
+in a value for each paramter.
 
-    You'll have to console.log to see the filtered array
+You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 7, 'below'))

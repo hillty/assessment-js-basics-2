@@ -143,4 +143,4 @@ const deals = [
 
 //CODE HERE // 
 
-// deals[1].desc = deals[1].desc.replace('March', 'April')
+// deals[1].desc = deals[1].desc.replace('March', 'April').trim()
